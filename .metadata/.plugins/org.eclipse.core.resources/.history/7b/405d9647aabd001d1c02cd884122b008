@@ -1,0 +1,49 @@
+package com.example.demo.entity;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="cart")
+public class Cart {
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name  = "id")
+	private int id;
+	
+	private String foodName;
+	private String foodPrice;
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getFoodName() {
+		return foodName;
+	}
+	public void setFoodName(String foodName) {
+		this.foodName = foodName;
+	}
+	public String getFoodPrice() {
+		return foodPrice;
+	}
+	public void setFoodPrice(String foodPrice) {
+		this.foodPrice = foodPrice;
+	}
+	public Cart() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	public Cart(String foodName, String foodPrice) {
+		super();
+		this.foodName = foodName;
+		this.foodPrice = foodPrice;
+	}
+	
+
+}

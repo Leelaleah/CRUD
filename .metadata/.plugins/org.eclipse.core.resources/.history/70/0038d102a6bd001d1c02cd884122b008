@@ -1,0 +1,98 @@
+package com.example.demo.entity;
+
+import org.apache.catalina.User;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name="cart")
+public class Cart {
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name  = "id")
+	private int id;
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getFood_name() {
+		return food_name;
+	}
+
+	public void setFood_name(String food_name) {
+		this.food_name = food_name;
+	}
+
+	public String getFood_type() {
+		return food_type;
+	}
+
+	public void setFood_type(String food_type) {
+		this.food_type = food_type;
+	}
+
+	public String getFood_image() {
+		return food_image;
+	}
+
+	public void setFood_image(String food_image) {
+		this.food_image = food_image;
+	}
+
+	public int getFood_price() {
+		return food_price;
+	}
+
+	public void setFood_price(int food_price) {
+		this.food_price = food_price;
+	}
+
+	public int getFood_quantity() {
+		return food_quantity;
+	}
+
+	public void setFood_quantity(int food_quantity) {
+		this.food_quantity = food_quantity;
+	}
+
+	@Column(name = "food_name")
+	private String food_name;
+	
+	@Column(name = "food_type")
+	private String food_type;
+	
+	@Column(name = "food_image")
+	private String food_image;
+	
+	@Column(name = "food_price")
+	private int food_price;
+	
+	@Column(name = "food_quantity")
+	private int food_quantity;
+
+	private User user;
+	public Cart() {
+	}
+
+	public Cart(int id, String food_name, String food_type, String food_image, int food_price, int food_quantity,
+			User user) {
+		super();
+		this.id = id;
+		this.food_name = food_name;
+		this.food_type = food_type;
+		this.food_image = food_image;
+		this.food_price = food_price;
+		this.food_quantity = food_quantity;
+		this.user = user;
+	}
+}

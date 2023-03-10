@@ -1,0 +1,10 @@
+package com.example.demo.dto;
+
+public class Dtoclass {
+	private int id;
+	
+	private String foodName;
+	
+	private int foodPrice;
+
+}
